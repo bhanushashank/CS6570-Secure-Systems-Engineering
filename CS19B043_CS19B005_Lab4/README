@@ -1,0 +1,3 @@
+1. The script ScrapeStack.py reads some portion of the server's stack and puts the responses in dump.txt
+2. The script DecodeHex.py decodes the dump.txt file to convert hexadecimal values into characters
+3. The script SearchPasswords.py searches for potential passwords of length 29 (= 30 - (one endline character))

@@ -1,0 +1,39 @@
+Instructions to execute Program1 script.
+------------------------------------------
+1. Give execution permissions to the script using the chmod command
+	$ chmod u+x Program1
+2. Run the program to generate the exploit string Program1.exp
+	$ ./Program1 > Program1.exp
+3. Give the exploit string as input to lab3_rop executable
+	$ ./lab3_rop < Problem1.exp
+
+Ouput should look as follows for Problem1:
+	Input 10 words:
+	Here are the first characters from the 10 words concatenated:
+	Successful
+	Roll Numbers : CS19B005 and CS19B043
+	Value in glb is 720
+	Segmentation fault (core dumped)
+
+
+Instructions to execute Program2 script.
+----------------------------------------
+1. Give execution permissions to the script using the chmod command
+	$ chmod u+x Program2
+2. Run the program to generate the exploit string Program2.exp
+	$ ./Program2 > Program2.exp
+3. Give the exploit string as input to lab3_rop executable
+	$ ./lab3_rop < Problem2.exp
+
+
+Ouput should look as follows for Problem2: (for n = 15)
+	Input 10 words:
+	Here are the first characters from the 10 words concatenated:
+	Successful
+	Roll Numbers : CS19B005 and CS19B043
+	Value in glb is 987
+	Segmentation fault (core dumped)
+
+
+
+

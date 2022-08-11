@@ -1,0 +1,234 @@
+--[ Username: --[ Password: 00007ffc04f19900 failed login!
+
+--[ Username: --[ Password: 0000000000000075 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000002000000000 failed login!
+
+--[ Username: --[ Password: 0000000400000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000001e540c3e68 failed login!
+
+--[ Username: --[ Password: 0000000900000010 failed login!
+
+--[ Username: --[ Password: 000055869d5d6260 failed login!
+
+--[ Username: --[ Password: 7574706163756f79 failed login!
+
+--[ Username: --[ Password: 6c66656874646572 failed login!
+
+--[ Username: --[ Password: 657274776f6e6761 failed login!
+
+--[ Username: --[ Password: 0000007361747461 failed login!
+
+--[ Username: --[ Password: 6c36313024353125 failed login!
+
+--[ Username: --[ Password: 776f6e6b6e750078 failed login!
+
+--[ Username: --[ Password: 000000000000006e failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 00007ffc00000000 failed login!
+
+--[ Username: --[ Password: 00007f59540c3000 failed login!
+
+--[ Username: --[ Password: 006e776f6e6b6e75 failed login!
+
+--[ Username: --[ Password: 00007ffc04f19900 failed login!
+
+--[ Username: --[ Password: 0000000000000075 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000002000000000 failed login!
+
+--[ Username: --[ Password: 0000000400000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000001e540c3e68 failed login!
+
+--[ Username: --[ Password: 0000000900000010 failed login!
+
+--[ Username: --[ Password: 000055869d5d6260 failed login!
+
+--[ Username: --[ Password: 7574706163756f79 failed login!
+
+--[ Username: --[ Password: 6c66656874646572 failed login!
+
+--[ Username: --[ Password: 657274776f6e6761 failed login!
+
+--[ Username: --[ Password: 0000007361747461 failed login!
+
+--[ Username: --[ Password: 6c36313024353125 failed login!
+
+--[ Username: --[ Password: 776f6e6b6e750078 failed login!
+
+--[ Username: --[ Password: 000000000000006e failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 00007ffc00000000 failed login!
+
+--[ Username: --[ Password: 00007f59540c3000 failed login!
+
+--[ Username: --[ Password: 006e776f6e6b6e75 failed login!
+
+--[ Username: --[ Password: 00007ffc04f19900 failed login!
+
+--[ Username: --[ Password: 0000000000000075 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000002000000000 failed login!
+
+--[ Username: --[ Password: 0000000400000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000001e540c3e68 failed login!
+
+--[ Username: --[ Password: 0000000900000010 failed login!
+
+--[ Username: --[ Password: 000055869d5d6260 failed login!
+
+--[ Username: --[ Password: 7574706163756f79 failed login!
+
+--[ Username: --[ Password: 6c66656874646572 failed login!
+
+--[ Username: --[ Password: 657274776f6e6761 failed login!
+
+--[ Username: --[ Password: 0000007361747461 failed login!
+
+--[ Username: --[ Password: 6c36313024353125 failed login!
+
+--[ Username: --[ Password: 776f6e6b6e750078 failed login!
+
+--[ Username: --[ Password: 000000000000006e failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 00007ffc00000000 failed login!
+
+--[ Username: --[ Password: 00007f59540c3000 failed login!
+
+--[ Username: --[ Password: 006e776f6e6b6e75 failed login!
+
+--[ Username: --[ Password: 00007ffc04f19900 failed login!
+
+--[ Username: --[ Password: 0000000000000075 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000002000000000 failed login!
+
+--[ Username: --[ Password: 0000000400000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000001e540c3e68 failed login!
+
+--[ Username: --[ Password: 0000000900000010 failed login!
+
+--[ Username: --[ Password: 000055869d5d6260 failed login!
+
+--[ Username: --[ Password: 7574706163756f79 failed login!
+
+--[ Username: --[ Password: 6c66656874646572 failed login!
+
+--[ Username: --[ Password: 657274776f6e6761 failed login!
+
+--[ Username: --[ Password: 0000007361747461 failed login!
+
+--[ Username: --[ Password: 6c36313024353125 failed login!
+
+--[ Username: --[ Password: 776f6e6b6e750078 failed login!
+
+--[ Username: --[ Password: 000000000000006e failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 0000000000000000 failed login!
+
+--[ Username: --[ Password: 00007ffc00000000 failed login!
+
+--[ Username: --[ Password: 00007f59540c3000 failed login!
+
+--[ Username: --[ Password: 006e776f6e6b6e75 failed login!
+
+--[ Username: --[ Password: 00007ffc04f19900 failed login!
+
